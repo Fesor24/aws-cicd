@@ -1,0 +1,33 @@
+version: 0.2
+
+phases:
+    install:
+        runtime-versions:
+            dotnet: 8.0
+        commands:
+            - echo Installing .NET 8.0
+            - dotnet --version
+    
+    pre_build:
+        commands:
+            - echo Restoring dependencies
+            - dotnet restore
+            
+    build:
+        commands:
+            - echo Building the .NET project
+            - dotnet build -c Release
+     
+    post_build:
+        commands: 
+            - echo Running tests
+            - echo Packaging the application
+            - dotnet publish -c Release -o ./publish
+artifacts:
+    files:
+        - '**/*'
+    base-directory: ./publish
+    
+cache:
+    paths:
+        - '/root/.nuget/packages/**/*'
