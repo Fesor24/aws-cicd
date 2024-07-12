@@ -25,8 +25,7 @@ phases:
             - dotnet publish -c Release -o ./publish
 artifacts:
     files:
-        - appspec.yml
-        - '**/*'
+        - 'aws-cicd/**/*'
     base-directory: ./publish
     
 cache:
