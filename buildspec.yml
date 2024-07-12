@@ -25,7 +25,7 @@ phases:
             - dotnet publish -c Release -o ./publish
 artifacts:
     files:
-        - appspec-staging.yml
+        - appspec.yml
         - '**/*'
     base-directory: ./publish
     
