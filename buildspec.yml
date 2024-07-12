@@ -23,10 +23,13 @@ phases:
             - echo Running tests
             - echo Packaging the application
             - dotnet publish -c Release -o ./publish
+            - ls -la
+            - ls -la ./publish 
 artifacts:
     files:
-        - 'publish/**/*'
-    
+        - '**/*'
+        - 'appspec.yml' 
+    base-directory: ./
     
 cache:
     paths:
