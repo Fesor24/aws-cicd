@@ -26,7 +26,7 @@ phases:
 artifacts:
     files:
         - 'publish/**/*'
-    base-directory: ./publish
+    
     
 cache:
     paths:
