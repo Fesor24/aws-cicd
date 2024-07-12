@@ -7,8 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deploy", "Deploy\Deploy.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76F76AC3-2194-448B-9157-5587461FD350}"
 	ProjectSection(SolutionItems) = preProject
-		appspec-staging.yml = appspec-staging.yml
 		buildspec.yml = buildspec.yml
+		appspec.yml = appspec.yml
 	EndProjectSection
 EndProject
 Global
