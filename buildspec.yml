@@ -21,10 +21,9 @@ phases:
     post_build:
         commands: 
             - echo Running tests
+            - echo Test to be added to project later 
             - echo Packaging the application
             - dotnet publish -c Release -o ./publish
-            - ls -la
-            - ls -la ./publish
             - echo Zipping the application
             - cd ./publish
             - zip -r ../lambda_function.zip .
@@ -35,7 +34,7 @@ phases:
 artifacts:
     files:
         - '**/*'
-    base-directory: ./
+    base-directory: ./publish
     
 cache:
     paths:
