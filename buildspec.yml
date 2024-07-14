@@ -24,11 +24,17 @@ phases:
             - echo Packaging the application
             - dotnet publish -c Release -o ./publish
             - ls -la
-            - ls -la ./publish 
+            - ls -la ./publish
+            - echo Zipping the application
+            - cd ./publish
+            - zip -r ../lambda_function.zip .
+            - cd ..
+            - echo Updating Lambda function
+            - aws lambda update-function-code --function-name <YourLambdaFunctionName> --zip-file fileb://lambda_function.zip
+
 artifacts:
     files:
         - '**/*'
-        - 'appspec.yml' 
     base-directory: ./
     
 cache:

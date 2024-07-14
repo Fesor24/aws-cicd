@@ -5,4 +5,5 @@ Resources:
       Properties:
         Name: "deploy"
         Alias: "staging"
-   
+        CurrentVersion: "1"
+        TargetVersion: "2"
