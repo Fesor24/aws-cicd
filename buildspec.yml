@@ -26,16 +26,7 @@ phases:
             - dotnet publish -c Release -o ./publish
             - echo Zipping the application
             - cd ./publish
-            - zip -r ../lambda_function.zip .
+            - zip -r ../lambda_funtion.zip .
             - cd ..
             - echo Updating Lambda function
             - aws lambda update-function-code --function-name ${FUNCTION_NAME} --zip-file fileb://lambda_function.zip
-
-artifacts:
-    files:
-        - '**/*'
-    base-directory: ./publish
-    
-cache:
-    paths:
-        - '/root/.nuget/packages/**/*'
