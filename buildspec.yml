@@ -26,12 +26,7 @@ phases:
             - dotnet publish -c Release -o ./publish
             - echo Zipping the application
             - cd ./publish
-            - zip -r ../lambda_funtion.zip .
+            - zip -r ../my_function.zip .
             - cd ..
             - echo Updating Lambda function
-            - aws lambda update-function-code --function-name ${FUNCTION_NAME} --zip-file fileb://lambda_function.zip
-
-artifacts:
-    files:
-        - '**/*'
-    base-directory: ./publish
+            - aws lambda update-function-code --function-name ${FUNCTION_NAME} --zip-file fileb://my_function.zip
