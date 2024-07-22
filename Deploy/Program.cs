@@ -9,23 +9,23 @@ app.MapGet("/", () => "Hello World");
 
 
 
-//app.MapGet("/api/books/{id}", (int id) =>
-//{
-//    BookRepository repo = new();
+app.MapGet("/api/books/{id}", (int id) =>
+{
+    BookRepository repo = new();
 
-//    var book = repo.GetBook(id);
+    var book = repo.GetBook(id);
 
-//    if (book is null) return Results.NotFound("Book not found");
+    if (book is null) return Results.NotFound("Book not found");
 
-//    return Results.Ok(book);
-//});
+    return Results.Ok(book);
+});
 
-//app.MapGet("api/books", () =>
-//{
-//    BookRepository repo = new();
+app.MapGet("api/books", () =>
+{
+    BookRepository repo = new();
 
-//    return Results.Ok(repo.GetBooks());
-//});
+    return Results.Ok(repo.GetBooks());
+});
 
 
 //- dotnet test --no-build --verbosity normal
