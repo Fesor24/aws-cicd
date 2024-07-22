@@ -30,3 +30,8 @@ phases:
             - cd ..
             - echo Updating Lambda function
             - aws lambda update-function-code --function-name ${FUNCTION_NAME} --zip-file fileb://lambda_function.zip
+
+artifacts:
+    files:
+        - '**/*'
+    base-directory: ./publish
