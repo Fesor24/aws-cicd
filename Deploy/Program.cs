@@ -1,28 +1,34 @@
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
+//builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World from Fesor Dev!!!");
 
-app.MapGet("/api/books/{id}", (int id) =>
-{
-    BookRepository repo = new();
 
-    var book = repo.GetBook(id);
 
-    if (book is null) return Results.NotFound("Book not found");
 
-    return Results.Ok(book);
-});
 
-app.MapGet("api/books", () =>
-{
-    BookRepository repo = new();
 
-    return Results.Ok(repo.GetBooks());
-});
+
+//app.MapGet("/api/books/{id}", (int id) =>
+//{
+//    BookRepository repo = new();
+
+//    var book = repo.GetBook(id);
+
+//    if (book is null) return Results.NotFound("Book not found");
+
+//    return Results.Ok(book);
+//});
+
+//app.MapGet("api/books", () =>
+//{
+//    BookRepository repo = new();
+
+//    return Results.Ok(repo.GetBooks());
+//});
 
 
 //- dotnet test --no-build --verbosity normal
